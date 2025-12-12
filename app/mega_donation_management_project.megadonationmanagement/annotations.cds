@@ -1,0 +1,64 @@
+using mEGA_Donation_Management_ProjectSrv as service from '../../srv/service';
+using from '../annotations';
+
+annotate service.Donations with @(
+    UI.FieldGroup #Main : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Label : 'Donor',
+                Value : donor_ID,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : city,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : donor.email,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : donor.phone,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : amount,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : currencyCode,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : donationDate,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : cause,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : campaign,
+            },
+        ],
+    }
+);
+
+annotate service.Donors with {
+    name @Common.FieldControl : #ReadOnly
+};
+
+annotate service.Donors with {
+    email @Common.FieldControl : #ReadOnly
+};
+
+annotate service.Donors with {
+    phone @Common.FieldControl : #ReadOnly
+};
+
+annotate service.Donations with {
+    donor @Common.ExternalID : donor.name
+};
+

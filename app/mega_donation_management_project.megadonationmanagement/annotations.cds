@@ -55,10 +55,20 @@ annotate service.Donors with {
 };
 
 annotate service.Donors with {
-    phone @Common.FieldControl : #ReadOnly
+    phone @(
+        Common.FieldControl : #ReadOnly,
+        )
 };
 
 annotate service.Donations with {
     donor @Common.ExternalID : donor.name
+};
+
+annotate service.Donations with {
+    city @Common.ExternalID : city
+};
+
+annotate service.Donations with {
+    donorName @Common.ExternalID : donor.name
 };
 

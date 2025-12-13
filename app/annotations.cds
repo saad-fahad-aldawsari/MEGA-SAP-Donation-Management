@@ -12,11 +12,7 @@ annotate mEGA_Donation_Management_ProjectSrv.Donors with {
   status @title: 'Status';
   donorType @title: 'Donor Type';
   isRecurringDonor @title: 'Is Recurring Donor';
-  isHNI @title: 'Is HNI';
-  createdAt @title: 'Created At';
-  createdBy @title: 'Created By';
-  modifiedAt @title: 'Modified At';
-  modifiedBy @title: 'Modified By'
+  isHNI @title: 'Is HNI'
 };
 
 annotate mEGA_Donation_Management_ProjectSrv.Donors with @UI.LineItem: [
@@ -37,11 +33,7 @@ annotate mEGA_Donation_Management_ProjectSrv.Donors with @UI.FieldGroup #Main: {
  { $Type: 'UI.DataField', Value: status },
  { $Type: 'UI.DataField', Value: donorType },
  { $Type: 'UI.DataField', Value: isRecurringDonor },
- { $Type: 'UI.DataField', Value: isHNI },
- { $Type: 'UI.DataField', Value: createdAt },
- { $Type: 'UI.DataField', Value: createdBy },
- { $Type: 'UI.DataField', Value: modifiedAt },
- { $Type: 'UI.DataField', Value: modifiedBy }
+ { $Type: 'UI.DataField', Value: isHNI }
   ]
 };
 
@@ -95,22 +87,6 @@ annotate mEGA_Donation_Management_ProjectSrv.Donations with {
         $Type            : 'Common.ValueListParameterDisplayOnly',
         ValueListProperty: 'isHNI'
       },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'createdAt'
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'createdBy'
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'modifiedAt'
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'modifiedBy'
-      },
     ],
   }
 };
@@ -124,10 +100,6 @@ annotate mEGA_Donation_Management_ProjectSrv.Donations with {
   donationDate @title: 'Donation Date';
   cause @title: 'Cause';
   campaign @title: 'Campaign';
-  createdAt @title: 'Created At';
-  createdBy @title: 'Created By';
-  modifiedAt @title: 'Modified At';
-  modifiedBy @title: 'Modified By'
 };
 
 annotate mEGA_Donation_Management_ProjectSrv.Donations with @UI.LineItem: [
@@ -154,10 +126,6 @@ annotate mEGA_Donation_Management_ProjectSrv.Donations with @UI.FieldGroup #Main
  { $Type: 'UI.DataField', Value: donationDate },
  { $Type: 'UI.DataField', Value: cause },
  { $Type: 'UI.DataField', Value: campaign },
- { $Type: 'UI.DataField', Value: createdAt },
- { $Type: 'UI.DataField', Value: createdBy },
- { $Type: 'UI.DataField', Value: modifiedAt },
- { $Type: 'UI.DataField', Value: modifiedBy },
     { $Type: 'UI.DataField', Label: 'Donor', Value: donor_ID }
   ]
 };

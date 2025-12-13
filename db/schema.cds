@@ -18,7 +18,7 @@ entity Donations : cuid {
   donorEmail: String(100);
   donorPhone: String(15);
   city: String(50);
-  amount: Integer;
+  amount: Decimal(15, 2);
   currencyCode: String(10);
   donationDate: Date;
   cause: String(100);

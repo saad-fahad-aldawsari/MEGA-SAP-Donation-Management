@@ -16,14 +16,6 @@ annotate service.Donations with @(
             },
             {
                 $Type : 'UI.DataField',
-                Value : donor.email,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : donor.phone,
-            },
-            {
-                $Type : 'UI.DataField',
                 Value : amount,
             },
             {
@@ -42,6 +34,14 @@ annotate service.Donations with @(
                 $Type : 'UI.DataField',
                 Value : campaign,
             },
+            {
+                $Type : 'UI.DataField',
+                Value : donorEmail,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : donorPhone,
+            },
         ],
     }
 );
@@ -51,7 +51,9 @@ annotate service.Donors with {
 };
 
 annotate service.Donors with {
-    email @Common.FieldControl : #ReadOnly
+    email @(
+        Common.FieldControl : #ReadOnly,
+        )
 };
 
 annotate service.Donors with {
@@ -70,5 +72,13 @@ annotate service.Donations with {
 
 annotate service.Donations with {
     donorName @Common.ExternalID : donor.name
+};
+
+annotate service.Donations with {
+    donorEmail @Common.ExternalID : donor.email
+};
+
+annotate service.Donations with {
+    donorPhone @Common.ExternalID : donor.phone
 };
 
